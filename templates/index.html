@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block head%}
+<title>Crop Recommendation System</title>
+{% endblock%}
+{% block body%}
+    <h1 class="my-2" style="text-align: center;">Crop Recommendation System</h1>
+    <form action="/" method="POST">
+        <div class="row my-2" style="margin:auto">
+        <div class="form-group col-4">
+          <label for="nitrogen">Nitrogen</label>
+          <input type="number" class="form-control" id="nitrogen" name="nitrogen" placeholder="Enter nitrogen value">
+        </div>
+        <div class="form-group col-4">
+            <label for="potassium">Potassium</label>
+            <input type="number" class="form-control" id="potassium" name="potassium" placeholder="Enter potassium value">
+          </div>
+          <div class="form-group col-4">
+            <label for="phosphorus">Phosphorus</label>
+            <input type="number" class="form-control" id="phosphorus" name="phosphorus" placeholder="Enter Phosphorus value">
+          </div>
+          </div>
+          <div class="form-group mx-2 my-2 ">
+            <label for="Rainfall">Rainfall</label>
+            <input type="text" inputmode="decimal" class="form-control" id="Rainfall" name="Rainfall" placeholder="Enter Rainfall value">
+          </div>
+          <div class="form-group mx-2 my-2">
+            <label for="Temperature">Temperature</label>
+            <input type="text" inputmode="decimal" class="form-control" id="Temperature" name="Temperature" placeholder="Enter Temperature value">
+          </div>
+          <div class="form-group mx-2 my-2">
+            <label for="pH">pH</label>
+            <input type="text" inputmode="decimal" class="form-control" id="pH" name="pH" placeholder="Enter pH value">
+          </div>
+          <div class="form-group mx-2 my-2">
+            <label for="humidity">Humidity</label>
+            <input type="text" inputmode="decimal" class="form-control" id="humidity" name="humidity" placeholder="Enter humidity value">
+          </div>
+        <button type="submit" class="btn btn-primary">Predict</button>
+      </form>
+{% endblock %}
+<input type="text" inputmode="decimal" 
+        id="float-input" name="float-input" 
+        pattern="[0-9]*[.,]?[0-9]*">
