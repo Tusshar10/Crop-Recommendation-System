@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 import sklearn
 import pickle
+from utils import humtem,rainfall
+
 app=Flask(__name__)
 model = pickle.load(open('model.pkl','rb'))
 
@@ -14,11 +16,13 @@ def index():
         N = request.form['nitrogen']
         P = request.form['phosphorus']
         K = request.form['potassium']
-        temperature = request.form['Temperature']
-        humidity = request.form['humidity']
         ph = request.form['pH']
-        rainfall = request.form['Rainfall']
-        data = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
+        state=request.form['state']
+        district=request.form['district']
+        month=request.form['Month']
+        rain=rainfall.get_rainfall(state,district,month)
+        temperature,humidity=humtem.get_temp_hum(district,state)
+        data = np.array([[N, P, K, temperature, humidity, ph, rain]])
         feature_names = ["Nitrogen", "Phosphorus", "Potassium", "Temperature", "Humidity", "pH", "Rainfall"]
         df = pd.DataFrame(data, columns=feature_names)
         predict = model.predict(df)
