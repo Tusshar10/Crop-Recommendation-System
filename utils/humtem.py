@@ -1,7 +1,7 @@
 import requests
 
 def get_temp_hum(district, state=None, month=None):
-    url = f"https://api.openweathermap.org/data/2.5/weather?q={district}&appid=api_key"
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={district}&appid=af1253e5ac93e4757ad434376e322761"
 
     payload = {}
     headers = {}

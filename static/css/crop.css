@@ -1,0 +1,47 @@
+body {
+ margin: 0;
+ padding: 0;
+ background-image: url('https://images.unsplash.com/photo-1610576375407-23f9a9455daa?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+ background-size: cover;
+ background-position: center;
+ background-attachment: fixed;
+ text-align: center;
+}
+
+h1.my {
+ background-color: rgba(0, 0, 0, 0.7);
+ padding: 20px;
+ color: #fff;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.div1 {
+ margin: 50px auto;
+ max-width: fit-content;
+ padding: 20px;
+ background-color: #f4f4f4;
+ border: 1px solid #ddd;
+ border-radius: 5px;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ font-family: Arial, sans-serif;
+ font-size: 20px;
+ font-weight: bold;
+ color: #000000;
+ text-align: center;
+}
+
+.div2 {
+ margin: 20px auto;
+ padding: 20px;
+ max-width: fit-content;
+ background-color: #f4f4f4;
+ border: 1px solid #ddd;
+ border-radius: 5px;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ text-transform: uppercase;
+ font-family: 'Times New Roman', serif;
+ font-size: 30px;
+ font-weight: bold;
+ font-style: normal;
+ color: #2f6c16;
+}
