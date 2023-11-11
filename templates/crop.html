@@ -6,5 +6,20 @@
 {% block body%}
 <h1 class="my" style="text-align: center;">Crop Recommendation System</h1>
 <div class="div1">OUR RECOMMENDATION </div>
-<div class="div2">{{crop}}</div>
+<div class="div2">{{crop['name']}}</div>
+<img src="{{url_for('static',filename='img/'+crop['name']+'.jpg')}}" width="500px" height="300px">
+<div class="details">
+    Rainfall: {{crop['rain']}} mm
+    <br>Temperature: {{ crop['temperature']|round(2) }} °C
+    <br>Humidity: {{crop['humidity']}}%
+</div>
+<div>
+<a href="javascript:history.back()">
+    <button class="btn btn-primary">Change Values</button>
+</a>
+<a href="/">
+<button class="btn btn-primary">Make Another Prediction</button>
+</a>
+</form>
+</div>
 {% endblock%}

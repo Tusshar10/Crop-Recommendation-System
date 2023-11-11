@@ -1,7 +1,6 @@
 from flask import Flask,request,render_template
 import numpy as np
 import pandas as pd
-import sklearn
 import pickle
 from utils import humtem,rainfall
 
@@ -13,20 +12,22 @@ def index():
     if(request.method=='GET'):
         return render_template("index.html")
     else:
-        N = request.form['nitrogen']
-        P = request.form['phosphorus']
-        K = request.form['potassium']
-        ph = request.form['pH']
-        state=request.form['state']
-        district=request.form['district']
-        month=request.form['Month']
-        rain=rainfall.get_rainfall(state,district,month)
-        temperature,humidity=humtem.get_temp_hum(district,state)
-        data = np.array([[N, P, K, temperature, humidity, ph, rain]])
+        crop={}
+        crop['N'] = request.form['nitrogen']
+        crop['P'] = request.form['phosphorus']
+        crop['K'] = request.form['potassium']
+        crop['ph'] = request.form['pH']
+        crop['state']=request.form['state']
+        crop['district']=request.form['district']
+        crop['month']=request.form['Month']
+        crop['rain']=rainfall.get_rainfall(crop['state'],crop['district'],crop['month'])
+        crop['temperature'],crop['humidity']=humtem.get_temp_hum(crop['district'],crop['state'])
+        data = np.array([[crop['N'], crop['P'], crop['K'], crop['temperature'], crop['humidity'], crop['ph'], crop['rain']]])
         feature_names = ["Nitrogen", "Phosphorus", "Potassium", "Temperature", "Humidity", "pH", "Rainfall"]
         df = pd.DataFrame(data, columns=feature_names)
         predict = model.predict(df)
-        return render_template("crop.html",crop=predict[0])
+        crop['name']=predict[0]
+        return render_template("crop.html",crop=crop)
 
 if __name__=="__main__":
     app.run(debug=True)

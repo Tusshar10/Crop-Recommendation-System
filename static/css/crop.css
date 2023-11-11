@@ -45,3 +45,15 @@ h1.my {
  font-style: normal;
  color: #2f6c16;
 }
+.details
+{
+    background-color: magenta;
+    margin: 20px;
+}
+.change
+{
+  background-color: blue;
+  color:white;
+  padding: 0.5rem;
+  border: 1px solid #333333;
+}
