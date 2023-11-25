@@ -8,10 +8,16 @@
 <div class="div1">OUR RECOMMENDATION </div>
 <div class="div2">{{crop['name']}}</div>
 <img src="{{url_for('static',filename='img/'+crop['name']+'.jpg')}}" width="500px" height="300px">
+<div>
+    Fertilizer Recommended:{{fert[crop['name']]}}
+<img src="{{url_for('static',filename='img/'+crop['name']+'fert.png')}}" width="500px" height="300px">
+</div>
 <div class="details">
     Rainfall: {{crop['rain']}} mm
     <br>Temperature: {{ crop['temperature']|round(2) }} °C
     <br>Humidity: {{crop['humidity']}}%
+    <br>NPK Chart:
+    <img src="{{url_for('static',filename='img/'+crop['name']+'npk.png')}}" width="200px" height="200px">
 </div>
 <div>
 <a href="javascript:history.back()">
