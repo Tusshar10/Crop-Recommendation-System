@@ -171,7 +171,7 @@ var AndraPradesh = [
     "FARIDABAD",
     "KURUKSHETRA",
     "SIRSA",
-    "SONEPAT(RTK)",
+    "SONIPAT",
     "YAMUNANAGAR",
     "KAITHAL",
     "PANIPAT",
@@ -347,7 +347,7 @@ var AndraPradesh = [
     "SINGRAULI",
   ];
   var Maharashtra = [
-    "MUMBAI CITY",
+    "MUMBAI",
     "RAIGAD",
     "RATNAGIRI",
     "THANE",
