@@ -3,29 +3,45 @@
 <title>Crop Recommendation System</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/crop.css') }}">
 {% endblock%}
+
 {% block body%}
+
 <h1 class="my" style="text-align: center;">Crop Recommendation System</h1>
-<div class="div1">OUR RECOMMENDATION </div>
-<div class="div2">{{crop['name']}}</div>
-<img src="{{url_for('static',filename='img/'+crop['name']+'.jpg')}}" width="500px" height="300px">
+
+<div class="card-container">
+    <div class="card-section">
+        <div class="card">
+            <img src="{{url_for('static',filename='img/'+crop['name']+'.jpg')}}">
+            <h2>OUR RECOMMENDATION {{crop['name']}}</h2>
+        </div>
+        <div class="card">
+            <img src="{{url_for('static',filename='img/'+crop['name']+'fert.png')}}">
+            <h2>Fertilizer Recommended {{fert[crop['name']]}}</h2>
+        </div>
+        <div class="card">
+            <img src="{{url_for('static',filename='img/'+crop['name']+'npk.png')}}">
+            <h2>
+                NPK Chart
+                <br>
+                <br>Rainfall: {{crop['rain']}} mm
+                <br>Temperature: {{ crop['temperature']|round(2) }} °C
+                <br>Humidity: {{crop['humidity']}}%
+            </h2>
+        </div>
+
+
+    </div>
+</div>
+
+
 <div>
-    Fertilizer Recommended:{{fert[crop['name']]}}
-<img src="{{url_for('static',filename='img/'+crop['name']+'fert.png')}}" width="500px" height="300px">
+    <a href="javascript:history.back()">
+        <button class="btn btn-primary">Change Values</button>
+    </a>
+    <a href="/">
+        <button class="btn btn-primary">Make Another Prediction</button>
+    </a>
+    </form>
 </div>
-<div class="details">
-    Rainfall: {{crop['rain']}} mm
-    <br>Temperature: {{ crop['temperature']|round(2) }} °C
-    <br>Humidity: {{crop['humidity']}}%
-    <br>NPK Chart:
-    <img src="{{url_for('static',filename='img/'+crop['name']+'npk.png')}}" width="200px" height="200px">
-</div>
-<div>
-<a href="javascript:history.back()">
-    <button class="btn btn-primary">Change Values</button>
-</a>
-<a href="/">
-<button class="btn btn-primary">Make Another Prediction</button>
-</a>
-</form>
-</div>
+
 {% endblock%}
