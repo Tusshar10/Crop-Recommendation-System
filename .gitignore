@@ -1,2 +1,6 @@
 env
 __pycache__/
+.env
+.ipynb_checkpoints/
+utils/__pycache__/
+*.pyc
