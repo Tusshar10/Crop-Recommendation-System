@@ -34,3 +34,5 @@ def index():
         crop['name']=predict[0]
         return render_template("crop.html",crop=crop,fert=fert)
 
+if __name__=="__main__":
+    app.run(debug=True)
