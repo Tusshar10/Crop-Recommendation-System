@@ -1,0 +1,42 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Git files
+.git
+.gitignore
+
+# Jupyter Notebooks (optional)
+*.ipynb
+.ipynb_checkpoints/
+
+# Docker-specific
+Dockerfile
+.dockerignore
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test and development files (optional)
+tests/
+*.coverage
+coverage.xml
+htmlcov/
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
